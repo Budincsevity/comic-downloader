@@ -17,7 +17,6 @@ object Services {
 }
 
 fun main(args: Array<String>) {
-
     if (args.isEmpty() || args.size > 1) {
         throw IllegalArgumentException("Only one argument is allowed which is the URL to the Comic. e.g.: http://readcomicbooksonline.net/reader/Batman_2016/Batman_2016_Issue_032")
     }
@@ -28,7 +27,6 @@ fun main(args: Array<String>) {
 }
 
 private fun downloadComicImages(comicUrl: String, comicName: String, pageIndex: Int) {
-
     val document = Jsoup.connect("$comicUrl/$pageIndex").get()
     val elementsByClass = document.getElementsByClass("picture")
     if (elementsByClass.size == 0) {
